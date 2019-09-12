@@ -27,7 +27,6 @@ If a subscription ID is specified, subscription-wide information will be provide
 Param(
     [Parameter(Mandatory=$true)][string]$SubscriptionID,
     [string]$OutputFolder = "$HOME\output\Get-SubscriptionDetails",
-    [switch]$SkipAuth,
     [switch]$Compute,
     [switch]$Network,
     [switch]$Storage,
@@ -448,13 +447,6 @@ function New-AzureSession{
     if($SubscriptionID -eq ""){
         Write-Error "Please input SubscriptionID."
         break
-    }
-        
-        
-    if($SkipAuth -ne $true){
-        Write-Log "Waiting: Login-AzAccount"
-        $null = Login-AzAccount
-        Write-Log "Success: Login-AzAccount" -Color Green
     }
  
     Write-Log "Waiting: Select-AzSubscription"
