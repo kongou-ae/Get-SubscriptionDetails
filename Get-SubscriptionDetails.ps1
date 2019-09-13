@@ -26,7 +26,7 @@ If a subscription ID is specified, subscription-wide information will be provide
 
 Param(
     [Parameter(Mandatory=$true)][string]$SubscriptionID,
-    [string]$OutputFolder = "$HOME\output\Get-SubscriptionDetails",
+    [string]$OutputFolder = "$HOME\Get-SubscriptionDetails",
     [switch]$Compute,
     [switch]$Network,
     [switch]$Storage,
